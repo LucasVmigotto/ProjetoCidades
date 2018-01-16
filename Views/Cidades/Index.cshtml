@@ -1,0 +1,26 @@
+@model IEnumerable<ProjetoCidades.Models.Cidade>
+<div>
+
+    <h2>Minhas Cidades</h2>
+    <p><a asp-action="Cadastrar">Cadastrar nova cidade</a></p>
+    <table class="table">
+        <tr>
+            <th>Nome</th>
+            <th>Habitantes</th>
+            <th>Opções</th>
+        </tr>
+        @{
+            foreach(var item in Model){
+                <tr>
+                    <td>@item.Nome</td>
+                    <td>@item.Habitantes</td>
+                    <td>
+                        <a asp-action="Delete" asp-route-id="@item.Id" onclick="return confirm('Deseja realmente excluir a cidade')" >Excluir</a> - 
+                        <a asp-action="Alterar" asp-route-id="@item.Id" >Alterar</a> - 
+                        <a asp-action="Detalhes" asp-route-id="@item.Id">Detalhes</a>
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+</div>

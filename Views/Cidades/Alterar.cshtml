@@ -1,0 +1,22 @@
+@model ProjetoCidades.Models.Cidade
+<div class="container">
+    <form class="form-group" asp-action="Alterar">
+        <div class="form-group">
+            <label asp-for="Nome" class="control-label"></label>
+            <input type="text" placeholder="Nome" asp-for="Nome"><br>
+            <span asp-validation-for="Nome" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Estado" class="control-label"></label>
+            <input type="text" placeholder="Estado" asp-for="Estado"><br>
+            <span asp-validation-for="Estado" class="text-danger"></span>
+        </div><div class="form-group">
+            <label asp-for="Habitantes" class="control-label"></label>
+            <input type="number" placeholder="Habitantes" asp-for="Habitantes"><br>
+            <span asp-validation-for="Habitantes" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Cadastrar" class="btn btn-feault">
+        </div>
+    </form>
+</div>
